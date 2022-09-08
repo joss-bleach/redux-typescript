@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useActions } from "../../hooks/useActions";
+import Repository from "./Repository";
 
 const RepositoriesList: React.FC = () => {
   const [term, setTerm] = useState("");
@@ -23,7 +24,9 @@ const RepositoriesList: React.FC = () => {
       <div>
         {error && <p>{error}</p>}
         {loading && <p>Loading...</p>}
-        {!error && !loading && data}
+        {!error &&
+          !loading &&
+          data.map((repository) => <Repository name={repository} />)}
       </div>
     </div>
   );
