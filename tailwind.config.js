@@ -18,6 +18,8 @@ module.exports = {
         paragraph: "#b8c1ec",
         button: "#eebbc3",
         "button-highlight": "#e4929f",
+        card: "#fffffe",
+        "card-tertiary": "#b8c1ec",
       },
       inherit: colors.inherit,
       current: colors.current,

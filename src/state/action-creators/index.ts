@@ -19,13 +19,20 @@ export const searchRepositories = (term: string) => {
         }
       );
 
-      const names = data.objects.map((result: any) => {
-        return result.package.name;
+      const packages = data.objects.map((result: any) => {
+        return {
+          name: result.package.name,
+          version: result.package.version,
+          description: result.package.description,
+          npm: result.package.links.npm,
+          github: result.package.links.repository,
+          publisher: result.package.publisher.username,
+        };
       });
 
       dispatch({
         type: ActionType.REPOSITORIES_SEARCH_SUCCESS,
-        payload: names,
+        payload: packages,
       });
     } catch (err) {
       if (err instanceof Error) {

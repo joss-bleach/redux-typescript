@@ -36,9 +36,11 @@ const RepositoriesList: React.FC = () => {
       <div>
         {error && <p>{error}</p>}
         {loading && <Loading />}
-        {!error &&
-          !loading &&
-          data.map((repository) => <Repository name={repository} />)}
+        <div className="flex flex-col space-y-4">
+          {!error &&
+            !loading &&
+            data.map((repository) => <Repository repository={repository} />)}
+        </div>
       </div>
     </div>
   );

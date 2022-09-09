@@ -19,6 +19,7 @@ const App = () => {
             <a
               className="text-theme-button transition hover:underline"
               target="_blank"
+              rel="noreferrer"
               href="https://github.com/joss-bleach/redux-typescript"
             >
               Click here

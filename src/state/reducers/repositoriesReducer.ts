@@ -1,10 +1,11 @@
 import { ActionType } from "../action-types";
 import { Action } from "../actions";
+import { repository } from "../models";
 
 interface RepositoriesState {
   loading: boolean;
   error: string | null;
-  data: string[];
+  data: repository[];
 }
 
 const initialState = {
